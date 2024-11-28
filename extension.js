@@ -50,10 +50,6 @@ function modifyMacMachineId() {
         const customMachineId = config.get('customMachineId');
         const newMachineId = customMachineId || generateRandomMachineId();
 
-        // 修改 telemetry.macMachineId
-        if (!data.telemetry) {
-            data.telemetry = {};
-        }
         data['telemetry.macMachineId'] = newMachineId;
 
         // 写回文件
