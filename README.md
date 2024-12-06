@@ -6,7 +6,7 @@ https://www.cursor.com/how-to-install-extension
 
 ## Usage
 
-`Ctrl + shift + f` > `fake` 
+`Ctrl + shift + P` > `fake` 
 
 ## NOT WORK？
 
