@@ -20,3 +20,9 @@ https://www.cursor.com/how-to-install-extension
 
 
 https://linux.do/t/topic/274172
+
+## Star History
+
+> 谁给我上营销号了 ？？？
+
+[![Star History Chart](https://api.star-history.com/svg?repos=bestK/cursor-fake-machine&type=Date)](https://star-history.com/#bestK/cursor-fake-machine&Date)
