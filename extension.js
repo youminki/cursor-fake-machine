@@ -74,11 +74,58 @@ function generateRandomMachineId() {
     });
 }
 
+async function killCursorProcesses() {
+    const platform = os.platform();
+    const exec = require('child_process').exec;
+
+    return new Promise((resolve, reject) => {
+        let command = '';
+        switch (platform) {
+            case 'win32':
+                command = 'taskkill /F /IM "Cursor.exe"';
+                break;
+            case 'darwin':
+                command = 'pkill -9 Cursor';
+                break;
+            case 'linux':
+                command = 'pkill -9 cursor';
+                break;
+            default:
+                reject(new Error('不支持的操作系统'));
+                return;
+        }
+
+        exec(command, error => {
+            if (error && error.code !== 1) {
+                reject(error);
+            } else {
+                resolve();
+            }
+        });
+    });
+} 
+
 function activate(context) {
     let disposable = vscode.commands.registerCommand('cursor-fake-machine.cursor-fake-machine', async function () {
         try {
             const result = modifyMacMachineId();
+
             vscode.window.showInformationMessage(`修改成功！\n路径: ${result.path}\n新的 machineId: ${result.newId}`);
+
+            const answer = await vscode.window.showWarningMessage(
+                '修改成功！是否要重启 Cursor 使更改生效？',
+                { modal: true },
+                '是',
+                '否',
+            );
+
+            if (answer === '是') {
+                try {
+                    await killCursorProcesses();
+                } catch (error) {
+                    vscode.window.showErrorMessage(`操作失败: ${error.message}`);
+                }
+            }
         } catch (error) {
             vscode.window.showErrorMessage(`修改失败: ${error.message}`);
 

@@ -2,9 +2,9 @@
     "name": "cursor-fake-machine",
     "displayName": "Fake Cursor: Fake Machine",
     "publisher": "fake-cursor",
-    "description": "https://github.com/fake-cursor/cursor-fake-machine",
-    "repository": "https://github.com/fake-cursor/cursor-fake-machine",
-    "version": "0.0.1",
+    "description": "https://github.com/bestk/cursor-fake-machine",
+    "repository": "https://github.com/bestk/cursor-fake-machine",
+    "version": "0.0.2",
     "engines": {
         "vscode": "^1.93.0"
     },
@@ -40,7 +40,8 @@
         "lint": "eslint .",
         "pretest": "pnpm run lint",
         "test": "vscode-test",
-        "prepare": "echo 'node_modules/**/*' > .vscodeignore"
+        "prepare": "echo 'node_modules/**/*' > .vscodeignore",
+        "package": "vsce package"
     },
     "devDependencies": {
         "@types/vscode": "^1.93.0",
