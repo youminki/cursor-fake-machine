@@ -1,6 +1,6 @@
 # Cursor Fake Machine
 ## Download
-https://github.com/bestK/cursor-fake-machine/releases/download/v0.0.1/cursor-fake-machine-0.0.1.vsix
+https://github.com/bestK/cursor-fake-machine/releases/download/v0.0.2/cursor-fake-machine-0.0.2.vsix
 ## Install
 https://www.cursor.com/how-to-install-extension
 
