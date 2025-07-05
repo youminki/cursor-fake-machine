@@ -2,7 +2,7 @@
   "name": "cursor-fake-machine",
   "displayName": "Fake Cursor: Fake Machine",
   "publisher": "fake-cursor",
-  "description": "https://github.com/bestk/cursor-fake-machine",
+  "description": "Cursor 앱의 machineId를 수정하여 체험을 초기화하는 도구입니다.",
   "repository": "https://github.com/bestk/cursor-fake-machine",
   "version": "0.0.2",
   "engines": {
@@ -11,28 +11,30 @@
   "categories": [
     "Other"
   ],
-  "activationEvents": [],
+  "activationEvents": [
+    "onCommand:cursor-fake-machine.cursor-fake-machine"
+  ],
   "main": "./extension.js",
   "contributes": {
     "configuration": {
-      "title": "Cursor Fake Machine",
+      "title": "Cursor Fake Machine 설정",
       "properties": {
         "cursorFakeMachine.storagePath": {
           "type": "string",
           "default": "",
-          "description": "自定义 storage.json 文件的路径。留空则使用默认路径。"
+          "description": "커스텀 storage.json 경로를 지정합니다. 비워두면 기본 경로를 사용합니다."
         },
         "cursorFakeMachine.customMachineId": {
           "type": "string",
           "default": "",
-          "description": "自定义 machineId。留空则随机生成。"
+          "description": "커스텀 machineId를 지정합니다. 비워두면 자동으로 생성됩니다."
         }
       }
     },
     "commands": [
       {
         "command": "cursor-fake-machine.cursor-fake-machine",
-        "title": "Fake Cursor: Fake Machine"
+        "title": "Fake Cursor: Fake Machine 실행"
       }
     ]
   },
