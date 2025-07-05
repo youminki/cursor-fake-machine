@@ -1,66 +1,66 @@
 {
-    "name": "cursor-fake-machine",
-    "displayName": "Fake Cursor: Fake Machine",
-    "publisher": "fake-cursor",
-    "description": "https://github.com/bestk/cursor-fake-machine",
-    "repository": "https://github.com/bestk/cursor-fake-machine",
-    "version": "0.0.2",
-    "engines": {
-        "vscode": "^1.93.0"
-    },
-    "categories": [
-        "Other"
-    ],
-    "activationEvents": [],
-    "main": "./extension.js",
-    "contributes": {
-        "configuration": {
-            "title": "Cursor Fake Machine",
-            "properties": {
-                "cursorFakeMachine.storagePath": {
-                    "type": "string",
-                    "default": "",
-                    "description": "自定义 storage.json 文件的路径。留空则使用默认路径。"
-                },
-                "cursorFakeMachine.customMachineId": {
-                    "type": "string",
-                    "default": "",
-                    "description": "自定义 machineId。留空则随机生成。"
-                }
-            }
+  "name": "cursor-fake-machine",
+  "displayName": "Fake Cursor: Fake Machine",
+  "publisher": "fake-cursor",
+  "description": "https://github.com/bestk/cursor-fake-machine",
+  "repository": "https://github.com/bestk/cursor-fake-machine",
+  "version": "0.0.2",
+  "engines": {
+    "vscode": "^1.92.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./extension.js",
+  "contributes": {
+    "configuration": {
+      "title": "Cursor Fake Machine",
+      "properties": {
+        "cursorFakeMachine.storagePath": {
+          "type": "string",
+          "default": "",
+          "description": "自定义 storage.json 文件的路径。留空则使用默认路径。"
         },
-        "commands": [
-            {
-                "command": "cursor-fake-machine.cursor-fake-machine",
-                "title": "Fake Cursor: Fake Machine"
-            }
-        ]
-    },
-    "scripts": {
-        "lint": "eslint .",
-        "pretest": "pnpm run lint",
-        "test": "vscode-test",
-        "prepare": "echo 'node_modules/**/*' > .vscodeignore",
-        "package": "vsce package"
-    },
-    "devDependencies": {
-        "@types/vscode": "^1.93.0",
-        "@types/mocha": "^10.0.9",
-        "@types/node": "20.x",
-        "eslint": "^9.13.0",
-        "@vscode/test-cli": "^0.0.10",
-        "@vscode/test-electron": "^2.4.1"
-    },
-    "peerDependenciesMeta": {
-        "@babel/core": {
-            "optional": true
-        },
-        "ava": {
-            "optional": true
-        },
-        "benchmark": {
-            "optional": true
+        "cursorFakeMachine.customMachineId": {
+          "type": "string",
+          "default": "",
+          "description": "自定义 machineId。留空则随机生成。"
         }
+      }
     },
-    "icon": "icon.png"
+    "commands": [
+      {
+        "command": "cursor-fake-machine.cursor-fake-machine",
+        "title": "Fake Cursor: Fake Machine"
+      }
+    ]
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "pnpm run lint",
+    "test": "vscode-test",
+    "prepare": "echo 'node_modules/**/*' > .vscodeignore",
+    "package": "vsce package"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.9",
+    "@types/node": "20.x",
+    "@types/vscode": "^1.92.0",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1",
+    "eslint": "^9.13.0"
+  },
+  "peerDependenciesMeta": {
+    "@babel/core": {
+      "optional": true
+    },
+    "ava": {
+      "optional": true
+    },
+    "benchmark": {
+      "optional": true
+    }
+  },
+  "icon": "icon.png"
 }
